@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsimeono <vsimeono@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 18:33:14 by vsimeono          #+#    #+#             */
-/*   Updated: 2022/11/08 15:25:27 by vsimeono         ###   ########.fr       */
+/*   Created: 2022/11/07 18:29:40 by vsimeono          #+#    #+#             */
+/*   Updated: 2022/11/08 15:25:16 by vsimeono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,30 @@
 #define FIXED_HPP
 
 #include <iostream>
-// #include <string>
+#include <cmath>
 
-class Fixed {
-
-	private:
-		int					_fixed_point;
-		int static const	_static_int;
-
+class Fixed
+{
 	public:
 		Fixed(void);
+		Fixed(Fixed const &src);
+		Fixed(const float f);
+		Fixed(const int i);
 		Fixed &operator=(Fixed const &src);
-		Fixed (Fixed const &src);
 		~Fixed(void);
 
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
+
+		float	toFloat(void) const;
+		int 	toInt(void) const;
+		
+	private:
+		int					_fixed_point;
+		static const int	_static_int;
+
 };
+
+std::ostream &operator<<(std::ostream &stream, Fixed const &ref);
 
 #endif
