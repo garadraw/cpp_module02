@@ -6,7 +6,7 @@
 /*   By: vsimeono <vsimeono@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 18:33:14 by vsimeono          #+#    #+#             */
-/*   Updated: 2022/11/08 15:25:27 by vsimeono         ###   ########.fr       */
+/*   Updated: 2022/11/08 15:57:03 by vsimeono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define FIXED_HPP
 
 #include <iostream>
-// #include <string>
 
 class Fixed {
 

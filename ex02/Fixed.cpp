@@ -6,15 +6,15 @@
 /*   By: vsimeono <vsimeono@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 20:36:32 by vsimeono          #+#    #+#             */
-/*   Updated: 2022/11/08 15:25:01 by vsimeono         ###   ########.fr       */
+/*   Updated: 2022/11/08 15:57:42 by vsimeono         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.cpp"
+#include "Fixed.hpp"
 
 const int	Fixed::_static_int = 8;
 
-Fixed::Fixed(void): _fixed_point(0);
+Fixed::Fixed(void): _fixed_point(0)
 {
 	std::cout << "Default Constructor Called" << std::endl;
 }
@@ -33,7 +33,7 @@ Fixed::Fixed(const float f)
 
 Fixed::Fixed(const int i)
 {
-	std::cout "Integer Constructor Called" << std::endl;
+	std::cout << "Integer Constructor Called" << std::endl;
 	this->_fixed_point = i * (1 << this->_static_int);
 }
 
@@ -74,7 +74,7 @@ float	Fixed::toFloat(void) const
 
 int		Fixed::toInt(void) const
 {
-	return (this->getRawBits() / (1 << this->bits));
+	return (this->getRawBits() / (1 << this->_static_int));
 }
 
 bool Fixed::operator>(Fixed const &ref) const
@@ -105,11 +105,6 @@ bool Fixed::operator!=(Fixed const &ref) const
 {
 	return (this->getRawBits() != ref.getRawBits());
 }
-
-
-
-
-
 
 
 
